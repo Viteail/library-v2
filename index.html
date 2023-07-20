@@ -7,5 +7,42 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <div class="modal invisible">
+        <div class="modal-content">
+          <form action="">
+            <div class="user-inputs">
+              <div class="input-container">
+                <input type="text" id="title" placeholder="Title" required />
+              </div>
+              <div class="input-container">
+                <input type="text" id="author" placeholder="Author" required />
+              </div>
+              <div class="input-container">
+                <input type="number" id="pages" placeholder="Pages" required />
+              </div>
+              <div class="input-container">
+                <label for="read">Have you read it?</label>
+                <input type="checkbox" id="read" value="not read" />
+              </div>
+              <div class="button-container">
+                <button type="button" id="submit">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="header">
+        <div class="wrapper">
+          <div class="text-container">Library</div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="button-container">
+          <button id="addbook-btn">+ Add Book</button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
