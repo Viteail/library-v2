@@ -90,6 +90,7 @@ body {
   border-radius: 20px;
   min-height: 300px;
   min-width: 200px;
+  animation: appear 150ms linear;
 }
 
 .user-inputs {
@@ -182,6 +183,7 @@ input[type='number'] {
   border-radius: 20px;
   box-shadow: 2px 2px 5px var(--lightgray);
   background: var(--white);
+  animation: appear 200ms linear;
 }
 
 .book-container > .text-wrapper {
@@ -232,4 +234,22 @@ input[type='number'] {
 
 .invisible {
   display: none;
+}
+
+@keyframes appear {
+  0% {
+    transform: scale(0.2);
+  }
+  25% {
+    transform: scale(0.4);
+  }
+  50% {
+    transform: scale(0.6);
+  }
+  75% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
