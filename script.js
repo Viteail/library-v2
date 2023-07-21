@@ -12,6 +12,11 @@ const booksWrapper = document.querySelector('.books-wrapper');
 
 let library = [];
 
+const read_Status = {
+  read: 'read',
+  not: 'not read',
+};
+
 addBookButton.addEventListener('click', () =>
   modal.classList.remove('invisible')
 );
@@ -24,8 +29,8 @@ window.onclick = (e) => {
 
 readInput.addEventListener('change', () =>
   readInput.checked
-    ? (readInput.value = 'read')
-    : (readInput.value = 'not read')
+    ? (readInput.value = read_Status.read)
+    : (readInput.value = read_Status.not)
 );
 
 submitButton.addEventListener('click', (e) => {
@@ -99,4 +104,23 @@ const createAndDisplayBook = (book) => {
   buttonWrapper.appendChild(removeButtonContainer);
   readButtonContainer.appendChild(readButton);
   removeButtonContainer.appendChild(removeButton);
+
+  toggleRead(readButton, book);
+};
+
+const toggleRead = (readButton, book) => {
+  if (book.read === read_Status.read) {
+    readButton.classList.add('read');
+  }
+
+  readButton.addEventListener('click', () => {
+    if (book.read === read_Status.read) {
+      readButton.classList.remove('read');
+      book.read = read_Status.not;
+    } else {
+      readButton.classList.add('read');
+      book.read = read_Status.read;
+    }
+    readButton.textContent = book.read;
+  });
 };
