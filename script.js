@@ -53,7 +53,7 @@ const addBookToLibrary = () => {
     pagesInput.value,
     readInput.value
   );
-
+  emptyInputs();
   library.push(book);
   createAndDisplayBook(book);
 };
@@ -131,4 +131,11 @@ const removeBook = (removeButton, bookContainer, book) => {
     bookContainer.remove();
     library.splice(library.indexOf(book), 1);
   });
+};
+
+const emptyInputs = () => {
+  titleInput.value = '';
+  authorInput.value = '';
+  pagesInput.value = '';
+  readInput.checked = false;
 };
