@@ -106,6 +106,7 @@ const createAndDisplayBook = (book) => {
   removeButtonContainer.appendChild(removeButton);
 
   toggleRead(readButton, book);
+  removeBook(removeButton, bookContainer, book);
 };
 
 const toggleRead = (readButton, book) => {
@@ -122,5 +123,12 @@ const toggleRead = (readButton, book) => {
       book.read = read_Status.read;
     }
     readButton.textContent = book.read;
+  });
+};
+
+const removeBook = (removeButton, bookContainer, book) => {
+  removeButton.addEventListener('click', () => {
+    bookContainer.remove();
+    library.splice(library.indexOf(book), 1);
   });
 };
