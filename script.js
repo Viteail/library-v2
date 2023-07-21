@@ -34,9 +34,15 @@ readInput.addEventListener('change', () =>
 );
 
 submitButton.addEventListener('click', (e) => {
-  modal.classList.add('invisible');
-  addBookToLibrary();
-  e.preventDefault();
+  if (
+    titleInput.value !== '' &&
+    authorInput.value !== '' &&
+    pagesInput.value !== ''
+  ) {
+    modal.classList.add('invisible');
+    addBookToLibrary();
+    e.preventDefault();
+  }
 });
 
 function Book(title, author, pages, read) {
